@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import {
   CircleQuestionMark,
   LibraryBig,
@@ -14,9 +15,7 @@ import { CourseComments } from "@/features/courses/components/course-comments";
 import { CourseMaterial } from "@/features/courses/components/course-material";
 import { CourseProgress } from "@/features/courses/components/course-progress";
 
-import { useIsMobile } from "@/hooks/use-mobile";
 import { LeaderboardModal } from "@/features/courses/components/leaderboard-modal";
-import { useState } from "react";
 import { useCourseId } from "@/features/courses/hooks/use-course-id";
 
 const courseActions = [
@@ -60,14 +59,12 @@ const CourseActions = ({
 };
 
 const CoursesPage = () => {
-  const isMobile = useIsMobile();
   const [leaderboardOpen, setLeaderboardOpen] = useState(false);
   const courseId = useCourseId();
 
   return (
     <div className="flex flex-col gap-4 w-full bg-neutral-100 min-h-full">
-      {isMobile ? (
-        <div className="flex w-full flex-col gap-8">
+        <div className="flex lg:hidden w-full flex-col gap-8">
           <div className="sticky top-1 z-30 bg-neutral-100 pb-2">
             <VideoPlayer />
           </div>
@@ -75,12 +72,13 @@ const CoursesPage = () => {
           <CourseActions onOpenLeaderboard={()=>setLeaderboardOpen(true)} />
 
           <CourseMaterial />
+          <h1 className="text-3xl font-semibold">Topics For This Course</h1>
           <CourseProgress />
           <CourseModules />
           <CourseComments />
         </div>
-      ) : (
-        <div className="grid w-full grid-cols-5 lg:gap-18">
+
+        <div className="hidden lg:grid w-full grid-cols-5 lg:gap-18">
           <div className="col-span-1 lg:col-span-3 flex w-full min-w-0 flex-col items-stretch gap-8">
             <VideoPlayer />
             <CourseActions onOpenLeaderboard={()=>setLeaderboardOpen(true)} />
@@ -93,7 +91,6 @@ const CoursesPage = () => {
             <CourseModules />
           </div>
         </div>
-      )}
       <LeaderboardModal
         courseId={courseId}
         open={leaderboardOpen}
