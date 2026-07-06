@@ -38,7 +38,7 @@ export const LeaderboardModal = ({
               </>
             ) : (
               <>
-                <span className="text-sm text-gray-500">
+                <span className="text-sm text-gray-600">
                   {data?.courseTitle}
                 </span>
                 <h2 className="text-xl font-bold text-gray-900">Leaderboard</h2>
@@ -107,7 +107,7 @@ export const LeaderboardModal = ({
                     >
                       {entry.studentName}
                     </span>
-                    <span className="text-sm font-semibold text-gray-500">
+                    <span className="text-sm font-semibold text-gray-700">
                       {entry.score} pts
                     </span>
                   </div>

@@ -4,16 +4,14 @@ import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 import { Comment } from "@/features/courses/models/types";
 import { useGetCourseComments } from "../services/use-get-coures-comments";
 
 export const CourseComments = () => {
-  const { isLoading, data, isFetching } = useGetCourseComments();
-
-  console.log(isLoading, isFetching);
+  const { isLoading, data } = useGetCourseComments();
 
   if (isLoading) {
     return (
@@ -44,7 +42,7 @@ export const CourseComments = () => {
 
   return (
     <div className="flex flex-col gap-8 w-full" id="comments">
-      <h1 className="text-3xl font-semibold">Comments</h1>
+      <h2 className="text-3xl font-semibold">Comments</h2>
       <div className="flex items-start gap-5 flex-col w-full max-h-[300px] overflow-auto md:h-full">
         {data?.map((comment) => (
           <CommentCard key={comment.id} comment={comment} />
@@ -64,10 +62,10 @@ const CommentCard = ({ comment }: { comment: Comment }) => {
       </Avatar>
       <div className="flex-1 flex flex-col gap-2">
         <div className="flex items-start flex-col gap-1">
-          <h3 className="font-semibold text-gray-500">{comment.authorName}</h3>
-          <p className="text-sm text-muted-foreground">{comment.date}</p>
+          <h3 className="font-semibold text-gray-700">{comment.authorName}</h3>
+          <p className="text-sm text-gray-500">{comment.date}</p>
         </div>
-        <p className="text-muted-foreground">{comment.body}</p>
+        <p className="text-gray-600">{comment.body}</p>
       </div>
     </div>
   );
@@ -78,6 +76,7 @@ const AddComment = () => {
     <div className="flex flex-col items-start gap-3">
       <Textarea
         placeholder="Write a comment..."
+        aria-label="Write a comment"
         className="w-full h-37.5 bg-white shadow-sm border-none rounded-md"
         rows={5}
       />

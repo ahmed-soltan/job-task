@@ -86,7 +86,7 @@ export const CourseModules = () => {
                       >
                         <div className="flex items-center gap-2">
                           <FileText className="size-4" />
-                          <span className="text-gray-500">{lesson.title}</span>
+                          <span className="text-gray-700">{lesson.title}</span>
                         </div>
                         <Lock className="size-4" />
                       </div>
@@ -102,9 +102,9 @@ export const CourseModules = () => {
                       >
                         <div className="flex items-center gap-2">
                           <FileText className="size-4" />
-                          <span className="text-gray-500">{lesson.title}</span>
+                          <span className="text-gray-700">{lesson.title}</span>
                         </div>
-                        <span className="text-green-500">Unlocked</span>
+                        <span className="text-green-700">Unlocked</span>
                       </Link>
                     );
                   }
@@ -118,7 +118,7 @@ export const CourseModules = () => {
                     >
                       <div className="flex items-center gap-2">
                         <FileText className="size-4" />
-                        <span className="text-gray-500">{lesson.title}</span>
+                        <span className="text-gray-700">{lesson.title}</span>
                       </div>
                       {lesson.type === "quiz" ? (
                         <div className="flex items-center gap-2">
@@ -127,7 +127,7 @@ export const CourseModules = () => {
                         </div>
                       ): (
 
-                        <span className="text-green-500">Unlocked</span>
+                        <span className="text-green-700">Unlocked</span>
                       )}
                     </button>
                   );

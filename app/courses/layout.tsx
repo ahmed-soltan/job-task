@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
+
 import { BreadcrumbsSection } from "@/components/breadcrumbs-section";
 import { CourseHeader } from "@/features/courses/components/course-header";
+
+
+export const metadata: Metadata = {
+  title: "Starting SEO as your Home | Course Player",
+  description: "Watch lessons, take quizzes, and track your progress.",
+};
 
 export default function CoursesLayout({
   children,

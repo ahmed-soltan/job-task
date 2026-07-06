@@ -26,11 +26,16 @@ export const CourseProgress = () => {
         >
           <div className="relative rounded-full size-9 text-center flex items-center justify-center text-[9px] font-semibold uppercase border-2 border-gray-300">
             you
-          <div className="absolute top-10 size-1 rounded-full bg-gray-300" />
+            <div className="absolute top-10 size-1 rounded-full bg-gray-300" />
           </div>
         </div>
 
-        <Progress value={progress} className="h-3 w-full rounded-full" />
+        <Progress
+          value={progress}
+          className="h-3 w-full rounded-full"
+          aria-label="Course progress"
+          aria-valuetext={`${progress}% complete`}
+        />
         <div
           className="absolute bottom-2 z-10 flex -translate-x-1/2 flex-col items-center gap-1"
           style={{ left: `${progress}%` }}
