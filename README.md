@@ -23,6 +23,9 @@ The app simulates a real LMS flow using mock APIs:
 - Comment list with in-memory POST support.
 - Leaderboard modal per course.
 
+## Live Demo
+[https://job-task-iota-plum.vercel.app/courses/seo-home-101]
+
 ## Tech Stack
 
 - Next.js 16 (App Router)
@@ -106,3 +109,10 @@ pnpm lint
 - Data is mocked for task/demo purposes.
 - Comments are stored in server memory during runtime and reset when the server restarts.
 - Quiz correct answers are hidden from the client quiz payload and checked server-side on submit.
+
+
+## Performance 
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a797f3fc-20de-4b1d-ae43-b3ca5d0d55e8" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5fb302ae-50b5-4c8e-93c1-7d5a66d500b3" />
+
