@@ -23,6 +23,9 @@ The app simulates a real LMS flow using mock APIs:
 - Comment list with in-memory POST support.
 - Leaderboard modal per course.
 
+## Live Demo
+[https://job-task-iota-plum.vercel.app/courses/seo-home-101]
+
 ## Tech Stack
 
 - Next.js 16 (App Router)
